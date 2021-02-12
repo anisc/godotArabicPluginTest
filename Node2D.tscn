@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/arabic-text/ALabel.gd" type="Script" id=1]
+[ext_resource path="res://MarkaziText-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Node2D.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 64.5527
+margin_top = 452.302
+margin_right = 225.553
+margin_bottom = 513.302
+custom_fonts/font = SubResource( 2 )
+text = "greetings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ALabel" type="Label" parent="."]
+margin_left = 406.201
+margin_top = 455.807
+margin_right = 567.201
+margin_bottom = 516.807
+custom_fonts/font = SubResource( 1 )
+text = "greetings"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+arabic_input = "greetings"
+
+[node name="ALabel2" type="Label" parent="."]
+margin_left = 775.774
+margin_top = 444.322
+margin_right = 939.774
+margin_bottom = 519.322
+custom_fonts/font = SubResource( 1 )
+text = "greetings"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+arabic_input = "greetings"
+
+[node name="ChangeLanguageBtn" type="Button" parent="."]
+margin_left = 644.429
+margin_top = 51.8055
+margin_right = 968.429
+margin_bottom = 137.805
+custom_fonts/font = SubResource( 4 )
+text = "change_language"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JustAnnotationLabel" type="Label" parent="."]
+margin_left = 4.48462
+margin_top = 348.743
+margin_right = 1035.48
+margin_bottom = 404.743
+custom_fonts/font = SubResource( 3 )
+text = "Standard label                         ALabel without forcing          ALabel2 forced"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ChangeLanguageBtn" to="." method="_on_ChangeLanguageBtn_pressed"]
